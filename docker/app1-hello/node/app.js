@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
+require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 const ENV = process.env.ENV_VALUE || "No env set";
 const HOSTNAME = process.env.HOSTNAME || require('os').hostname();
+
+console.log(process.env.ENV_VALUE);
 
 app.get("/", (req, res) => {
   res.json({

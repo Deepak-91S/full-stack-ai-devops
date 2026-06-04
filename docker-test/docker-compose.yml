@@ -1,0 +1,5 @@
+services:
+  my-node-app:   
+    image: deepak3006/mynode-prod-app:v1
+    ports: 
+      - "3300:3000"

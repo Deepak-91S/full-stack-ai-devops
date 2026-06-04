@@ -1,0 +1,16 @@
+services:
+
+  service-a-price:
+    build: ./service-a
+    ports:
+      - 3100:3000
+    environment:
+      - TAX_SERVICE_URL=http://service-b-tax:4000
+    depends_on:
+      - service-b-tax
+
+  service-b-tax:
+    build: ./service-b
+    ports:
+      - 4100:4000
+    

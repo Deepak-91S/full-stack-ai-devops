@@ -1,0 +1,24 @@
+services:
+  my-node-app:
+    build: ./node
+    image: deepak3006/mynode-prod-app:v1
+    ports: 
+      - "3100:3000"
+    environment:
+      - ENV_VALUE=${ENV_VALUE_FILE_NODE}
+
+  my-py-app:
+    build: ./python
+    image: deepak3006/mypython-prod-app:v1.0
+    ports: 
+      - "3200:3000"
+    environment:
+      - ENV_VALUE=${ENV_VALUE_FILE_PYTHON}
+
+  my-java-app:
+    build: ./springboot/hello-spring
+    image: deepak3006/myjava-prod-app:v1.1.0
+    ports:
+      - "8089:8080"
+    environment:
+      - ENV_VALUE=${ENV_VALUE_FILE_SPRING}

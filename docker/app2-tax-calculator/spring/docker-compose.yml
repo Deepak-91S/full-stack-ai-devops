@@ -1,0 +1,32 @@
+services:
+  spring-service-a:
+    build: ./service-a
+    ports:
+      - "3081:3080"
+    environment:
+      - TAX_SERVICE_URL=http://spring-service-b:3090
+    depends_on:
+      - spring-service-b
+    networks:
+      - my-tax-network
+
+  spring-service-b:
+    build: ./service-b
+    ports:
+      - "3091:3090"
+    networks:
+      - my-tax-network
+
+  front-end-react-tax:
+    build: ../tax-calculator-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - spring-service-a
+    networks:
+      - my-tax-network
+
+networks:
+  my-tax-network:
+    driver: bridge
+
