@@ -25,13 +25,7 @@ jobs:
 
             - name: Build and Test
               working-directory: docker/app1-hello/node
-              run: npm test --if-present
-
-            - name: Upload Test Reports
-              uses: actions/upload-artifact@v7
-              with:   
-                name: coverage-reports   
-                path: docker/app1-hello/node/coverage
+              run: npm test --if-present           
 
 
     Docker-build-push:
