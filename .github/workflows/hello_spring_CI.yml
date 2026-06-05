@@ -2,6 +2,8 @@ name: Hello Spring Boot App To Dcoker
 
 on:
     push:
+        paths:
+            - "docker/app1-hello/springboot/hello-spring"
     workflow_dispatch:
 
 jobs:
