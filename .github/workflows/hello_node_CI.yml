@@ -3,7 +3,7 @@ name: Hello Node App To
 on:
     push:
         paths:
-            - "docker/app1-hello/node"
+            - "docker/app1-hello/node/**"
     workflow_dispatch:
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
               working-directory: docker/app1-hello/node
               run: |
                 npm ci
-                npm test
+                npm test -- --coverage
 
             - name: Upload Test Reports
               uses: actions/upload-artifact@v7

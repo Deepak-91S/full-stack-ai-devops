@@ -6,8 +6,12 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1"
   },
+  "devDependencies": {
+    "jest": "^30.0.0"
+  },
+
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"No tests yet\""
+    "test": "jest --coverage"
   }
 }
