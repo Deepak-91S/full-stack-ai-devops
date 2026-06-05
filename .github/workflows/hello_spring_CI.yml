@@ -59,8 +59,8 @@ jobs:
                 push: true
                 tags: |
                     ${{secrets.DOCKERHUB_USERNAME}}/hello-spring:latest
-                    ${{secrets.DOCKERHUB_USERNAME}}/hello-spring:{{github.sha}}
-                    ${{secrets.DOCKERHUB_USERNAME}}/hello-spring:{{github.ref}}
+                    ${{secrets.DOCKERHUB_USERNAME}}/hello-spring:${{github.sha}}
+                    ${{secrets.DOCKERHUB_USERNAME}}/hello-spring:${{github.ref}}
 
 
 
