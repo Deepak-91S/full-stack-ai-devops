@@ -3,7 +3,7 @@ name: Hello Node App To
 on:
     push:
         paths:
-            - "docker/app1-hello/node/**"
+            - "docker/app1-hello/node"
     workflow_dispatch:
 
 jobs:
