@@ -1,0 +1,17 @@
+eksctl create cluster --name hello-cluster --region us-east-2 --nodes 2
+kubectl get all
+aws eks list-clusters
+kubectl apply -f app.yaml
+kubectl config get-contexts
+kubectl config use-context docker-desktop
+kubectl get nodes
+kubectl config current-context
+eksctl delete cluster --name hello-cluster-2 --region us-east-2
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.9.6/deploy/static/provider/cloud/deploy.yaml
+
+#kubeconfig info
+kubectl config view
+kubectl config current-context
+kubectl config use-context docker-desktop
+#aws
+aws eks update-kubeconfig --name <CLUSTER-NAME> --region us-east-2

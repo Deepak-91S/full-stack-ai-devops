@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mynode-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mynode-app-pod
+  template:
+    metadata:
+      labels:
+        app: mynode-app-pod
+    spec:
+      containers:
+        - name: mynode-app-con
+          image: deepak3006/mynode-prod-app:v1
+          # env:
+          #   - name: LOG_LEVEL
+          #     value: "Development"
+          #   - name: APP_COLOR
+          #     value: "green"
+          env:
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: appl-config
+                  key: PORT
+            - name: ENV_VALUE
+              valueFrom:
+                configMapKeyRef:
+                  name: appl-config
+                  key: ENV_VALUE
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mynode-app-serv
+spec:
+  selector:
+    app: mynode-app-pod
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 32000

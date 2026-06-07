@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-b-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myservice-b
+  template:
+    metadata:
+      labels:
+        app: myservice-b
+    spec:
+      containers:
+        - name: myservice-b-con
+          image: embarkx/tax-service-b
+          # env:
+          #   - name: LOG_LEVEL
+          #     value: "Development"
+          #   - name: APP_COLOR
+          #     value: "green"
+          env:
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: service-b-config
+                  key: PORT            
+          ports:
+            - containerPort: 4000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myservice-b-serv
+spec:
+  selector:
+    app: myservice-b
+  type: ClusterIP
+  ports:
+    - port: 4000
+      targetPort: 4000
+      

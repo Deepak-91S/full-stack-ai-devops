@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: appl-config
+data:
+  PORT: "3000"
+  ENV_VALUE: "my-world-flying"
