@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: myservice-a-con
-          image: embarkx/tax-service-a
+          image: deepak3006/tax-service-a
           env:
             - name: TAX_SERVICE_URL
               value: "http://myservice-b-service:4000"          

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: myservice-b-con
-          image: embarkx/tax-service-b                      
+          image: deepak3006/tax-service-b                      
           ports:
             - containerPort: 4000
 
