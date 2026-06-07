@@ -1,4 +1,4 @@
-name: Hello Node App To 
+name: Hello Node App To AWS with CI_CD
 
 on:
     push:
