@@ -89,7 +89,7 @@ jobs:
           run: kubectl get nodes
 
         - name: Deploy to AWS(Kubernetes)
-          run: kubectl apply -f k8s/aws/java
+          run: kubectl apply -f ../k8s/aws/java
 
 
 
