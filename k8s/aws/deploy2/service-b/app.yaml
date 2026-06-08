@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: myservice-b-con
-          image: deepak3006/tax-service-b                      
+          # change the image tag based on app
+          image: deepak3006/tax-service-b:node-latest                       
           ports:
             - containerPort: 4000
 

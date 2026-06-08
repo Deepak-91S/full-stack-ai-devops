@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: myservice-a-con
-          image: deepak3006/tax-service-a
+          # change the image tag based on app
+          image: deepak3006/tax-service-a:node-latest 
           env:
             - name: TAX_SERVICE_URL
               value: "http://myservice-b-service:4000"          
