@@ -28,6 +28,6 @@ spec:
     app: frontend
   type: ClusterIP
   ports:
-    - port: 80
+    - port: 81
       targetPort: 80
       
