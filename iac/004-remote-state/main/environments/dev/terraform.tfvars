@@ -1,0 +1,12 @@
+aws_region = "us-east-2"
+instance_type="t3.small"
+instance_name="tf-dev-demo"
+enable_monitoring=true 
+ec2_ami_id = "ami-0c6ac5f2fed2981b0"
+iam_user-name="dev-demo-user"
+s3-bucket-name="dev-demo-buc"
+s3-bucket-id="dev-demo-10062026"
+environment="development"
+s3-bucket-versioning=false
+bucket_purpose="dev demo purpose"
+iam_user_purpose="demo dev user"

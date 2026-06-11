@@ -1,0 +1,22 @@
+#Write, Paln, apply
+
+
+Commands:
+terraform init
+terraform validate           #syntax, reference validate, block correctness, it will not talk with platform(aws,gcp,azurE)
+terraform plan
+terraform plan -out="filename"     # to save the paln in the file, cant readable, we can apply from here by terraform apply "filename" - it will not ask for ocnfirmation
+terraform apply
+terraform apply -auto-approve        #useful in CICD
+terraform destroy
+terraform fmt           #formatting
+terraform fmt -diff          #first show the diff 
+terraform fmt -recursive           #format all the sub folders or multi folders in directory
+terraform apply -var="instance_type=t3.small"     #useful when default value is provided for variable
+terraform apply -var-file="dev.tfvars"    #useful when diff file names(terraform.tfvars = auto applied) given to variable files
+$env:TF_VAR_instance_type="t2.nano"     #other way of passing variable
+
+Order of Precedence:
+1. -var in cmd line
+2. variable file(.tfvars)
+3. default values
